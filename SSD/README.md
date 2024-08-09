@@ -1,7 +1,7 @@
 Dans ce dossier, vous retrouverez les différents modèles utilisés pour SSD et RA. En modifiant certains paramètres, comme en ajoutant des epsilon ou des k_ra, comme indiqué dans le rapport, vous obtiendrez les bonnes matrices et les bons taux de réaction.
 
-- **2 species**  
-  Modèle simple avec seulement 1 unité.
+- **RA**  
+  Modèle simple avec replicative advantage pour les mutants
 
 - **2 units**  
   Extension du modèle précédent avec 2 unités.
