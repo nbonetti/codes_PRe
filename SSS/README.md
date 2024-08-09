@@ -16,3 +16,7 @@ Dans ce dossier, vous trouverez les codes utiles aux simulations du modèle SSS.
   Modèle où les wildtypes sont ceux qui sont ralentis.
 
   
+- **2 species + M densest +W slowest**  
+  Modèle où les wildtypes sont ceux qui sont lents avec seulement 1 unité
+
+  
