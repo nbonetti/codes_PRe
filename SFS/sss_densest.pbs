@@ -1,0 +1,80 @@
+#!/bin/bash
+#PBS -l select=1:ncpus=1:mem=4gb
+#PBS -l walltime=02:00:00
+#PBS -J 1-100
+#PBS -N sims234
+#PBS -e $HOME/mtdna-mutations/logs/sims234_$PBS_ARRAY_INDEX.err
+#PBS -o $HOME/mtdna-mutations/logs/sims234_$PBS_ARRAY_INDEX.out
+
+# C setup
+module load tools/prod
+module load GCCcore/12.2.0
+module load gsl/2.7
+
+
+
+cd $PBS_O_WORKDIR
+
+
+PARAMS_SET=6
+
+PBS_ARRAY_INDEX=${PBS_ARRAY_INDEX:-1}
+# Copy the appropriate parameters.h to the temporary working directory
+cp mtdna-mutations/include/parameters_$PARAMS_SET.h $TMPDIR/parameters.h
+cp mtdna-mutations/include/lib_sim.h $TMPDIR/lib_sim.h
+cp mtdna-mutations/src/sss_densest_single_sim.c $TMPDIR/sss_densest_single_sim.c
+cp mtdna-mutations/src/lib_sim_2.c $TMPDIR/lib_sim_2.c
+
+if [[ $? -ne 0 ]]; then
+    echo "Error copying parameters.h"
+    exit 1
+fi
+echo "parameters.h copied successfully."
+
+cd $TMPDIR
+# Compile executables in the temporary working directory
+gcc -o sss_densest_single_sim$PARAMS_SET.o sss_densest_single_sim.c lib_sim_2.c -I/apps/gsl/2.7/include -L/apps/gsl/2.7/lib  -lgsl -lgslcblas -lm
+if [[ $? -ne 0 ]]; then
+    echo "Error compiling ra_single_sim"
+    exit 1
+fi
+
+echo "Executable compiled successfully."
+
+# Make directory to save simulation results
+mkdir -p $TMPDIR/parameters_set$PARAMS_SET
+if [[ $? -ne 0 ]]; then
+    echo "Error creating results directory"
+    exit 1
+fi
+
+echo "Results directory created successfully."
+
+
+
+START_SEED=$(((PBS_ARRAY_INDEX - 1) * 10000 + 1))
+END_SEED=$((PBS_ARRAY_INDEX * 10000))
+
+# Loop over the range of seeds assigned to this job array task
+for ((SEED=START_SEED; SEED<=END_SEED; SEED++))
+do
+    echo "Exécution de la simulation avec SEED=$SEED"
+    ./sss_densest_single_sim$PARAMS_SET.o $SEED
+    if [[ $? -ne 0 ]]; then
+        echo "Erreur lors de l'exécution avec SEED=$SEED"
+    else
+        echo "Simulation terminée avec succès pour SEED=$SEED"
+    fi
+done
+
+
+mkdir -p $HOME/mtdna-mutations/data_analysis/parameters_set$PARAMS_SET
+# Copy simulation results back to $HOME
+cp -r $TMPDIR/parameters_set$PARAMS_SET/* $HOME/mtdna-mutations/data_analysis/parameters_set$PARAMS_SET
+if [[ $? -ne 0 ]]; then
+    echo "Error copying results to home directory"
+    exit 1
+fi
+
+echo "Results copied successfully."
+
