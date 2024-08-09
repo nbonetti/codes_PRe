@@ -44,12 +44,6 @@ if __name__ == "__main__":
     for sim_type, color in zip(sim_types, colors):
         filtered_h_df = load_and_filter_data(sim_type, introduce_after, sim_length, parameters_set, h_threshold)
         
-        # Find fixation time
-        #fixation_time = find_fixation_time(filtered_h_df)
-        #if fixation_time is not None:
-            #print(f"Le temps de fixation pour {sim_type} est {fixation_time}")
-        #else:
-            #print(f"La fixation n'a pas été atteinte pour {sim_type}.")
         
         # Plot the increase in mutant fraction against time
         ax.plot(filtered_h_df["t"], filtered_h_df["h_mean"], linewidth=0.8, color=color, label=sim_type)
