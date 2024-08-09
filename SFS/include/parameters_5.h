@@ -4,8 +4,7 @@
 // Save file locations
 #define DIR_NAME "parameters_set5"
 //paramètres pour des chain of units 
-//matching wave speed ssd -ra 
-//Nss_ra=24.4
+
 // Model parameters
 #define CELLS 100 // number of cells
 #define LOG_SITE_STD_MUTATION_RATE 5.64345 // 10^(-LOG_SITE_STD_MUTATION_RATE) is the true mutation rate
