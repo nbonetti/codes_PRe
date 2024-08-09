@@ -23,13 +23,4 @@ if __name__ == "__main__":
     print(f"rank-biserial correlation coefficient {rb = }, U-statistic {U = }, {n1 = }, {n2 = }, p-value {p = }")
     
     
-    #pour parameters_set1
-    #rank-biserial correlation coefficient rb = -0.35373589183005105, U-statistic U = 35250727.5, n1 = 7859, n2 = 13881, p-value p = 0.0
     
-    
-    #pour parameters_set3
-    #rank-biserial correlation coefficient rb = -0.03603084059424562, U-statistic U = 384455.0, n1 = 602, n2 = 1325, p-value p = 0.20430945677977552
-    
-    
-    #pour parameters_set4
-    #rank-biserial correlation coefficient rb = -0.23126669755611853, U-statistic U = 77978.0, n1 = 602, n2 = 337, p-value p = 3.988102539016224e-09
