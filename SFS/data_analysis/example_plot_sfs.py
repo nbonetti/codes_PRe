@@ -33,9 +33,3 @@ if __name__ == "__main__":
 
 
 
-#1e-4
-C#:\Users\BONETTI\Desktop\STAGE_PRE\PRe_stage\mtdna-mutations\data_analysis>python example_mann-whitney1.py 
-#rank-biserial correlation coefficient rb = -0.08685100214086777, U-statistic U = 5424636.5, n1 = 14178, n2 = 838, p-value p = 2.3234894509486385e-05
-
-#(base) C:\Users\BONETTI\Desktop\STAGE_PRE\PRe_stage\mtdna-mutations\data_analysis>python example_mann-whitney2.py  
-#rank-biserial correlation coefficient rb = -0.07656312403041372, U-statistic U = 1819685.0, n1 = 4703, n2 = 838, p-value p = 0.00040567764341136337
