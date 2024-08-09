@@ -6,7 +6,7 @@ Dans ce dossier, vous retrouverez les différents modèles utilisés pour SSD et
 - **2 units**  
   Extension du modèle précédent avec 2 unités.
 
-- **SDE**  
+- **higher death rate**  
   Modèles explorant un taux de mortalité plus élevé pour observer le "stochastic reversal selection".
 
 - **birth-death process**  
