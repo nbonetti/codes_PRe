@@ -4,8 +4,7 @@
 // Save file locations
 #define DIR_NAME "parameters_set6"
 //time fixation 
-//comparaison avec RA 
-//pour arte_difference=9e-2 comparaison avec ra
+
 // Model parameters
 #define CELLS 2 // number of cells
 #define LOG_SITE_STD_MUTATION_RATE 5.64345 // 10^(-LOG_SITE_STD_MUTATION_RATE) is the true mutation rate
