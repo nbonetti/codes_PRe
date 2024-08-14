@@ -22,8 +22,14 @@ if __name__ == "__main__":
         sfs = remove_homoplasmy(sfs)
         
         # Plot the site frequency spectrum
-        n_bins = 20  # set number of bins
-        plot_sfs(ax, sfs, n_bins, density=True, label=sim_type, type="line", marker="o", markersize=3, color=color)
+        #n_bins = 20  # set number of bins
+        #plot_sfs(ax, sfs, n_bins, density=True, label=sim_type, type="line", marker="o", markersize=3, color=color)
+        # Renommer 'sss_densest' en 'sss' pour la légende
+        legend_label = "sss" if sim_type == "sss_densest" else sim_type
+        
+        # Tracer le spectre de fréquence des sites
+        n_bins = 20  # Définir le nombre de bins
+        plot_sfs(ax, sfs, n_bins, density=True, label=legend_label, type="line", marker="o", markersize=3, color=color)
     
     ax.set_xlabel("h")
     ax.set_ylabel("density")
