@@ -46,7 +46,13 @@ if __name__ == "__main__":
         
         
         # Plot the increase in mutant fraction against time
-        ax.plot(filtered_h_df["t"], filtered_h_df["h_mean"], linewidth=0.8, color=color, label=sim_type)
+        #ax.plot(filtered_h_df["t"], filtered_h_df["h_mean"], linewidth=0.8, color=color, label=sim_type)
+        #ax.fill_between(filtered_h_df["t"], filtered_h_df["h_mean"] - filtered_h_df["h_sem"], filtered_h_df["h_mean"] + filtered_h_df["h_sem"], color=color, alpha=0.25)
+        # Renommer 'sss_densest' en 'sss' pour la légende
+        legend_label = "sss" if sim_type == "sss_densest" else sim_type
+        
+        # Tracer l'augmentation de la fraction mutante en fonction du temps
+        ax.plot(filtered_h_df["t"], filtered_h_df["h_mean"], linewidth=0.8, color=color, label=legend_label)
         ax.fill_between(filtered_h_df["t"], filtered_h_df["h_mean"] - filtered_h_df["h_sem"], filtered_h_df["h_mean"] + filtered_h_df["h_sem"], color=color, alpha=0.25)
     
     ax.set_xlabel("t")
