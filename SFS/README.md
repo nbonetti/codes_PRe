@@ -1,5 +1,3 @@
-# Le Spectre de Fréquence des Sites Distingue les Mécanismes Derrière l'Accumulation des Mutations de l'ADNmt
-
 
 ## Structure du Dépôt
 Le dépôt est organisé en plusieurs répertoires pour séparer les différentes composantes du projet, facilitant ainsi la navigation et la maintenance.
