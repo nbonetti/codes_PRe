@@ -1,13 +1,13 @@
-Dans ce dossier, vous retrouverez les différents modèles utilisés pour SSD et RA. En modifiant certains paramètres, comme en ajoutant des epsilon ou des k_ra, comme indiqué dans le rapport, vous obtiendrez les bonnes matrices et les bons taux de réaction.
+In this folder, you will find the different models used for SSD and RA. By modifying certain parameters, such as adding epsilon or k_ra as indicated in the report, you can obtain the correct matrices and reaction rates.
 
 - **RA**  
-  Modèle simple avec replicative advantage pour les mutants
+  Simple model with replicative advantage for mutants.
 
 - **2 units**  
-  Extension du modèle SSD avec 2 unités.
+  Extension of the SSD model with 2 units.
 
 - **higher death rate**  
-  Modèles explorant un taux de mortalité plus élevé pour observer le "stochastic reversal selection".
+  Models exploring a higher mortality rate to observe "stochastic reversal selection."
 
 - **birth-death process**  
-  Modèle ultra simple avec une seule espèce pour comprendre la dynamique et les différences entre les résolutions déterministes et stochastiques.
+  Ultra-simple model with a single species to understand the dynamics and differences between deterministic and stochastic resolutions.
