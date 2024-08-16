@@ -1,17 +1,17 @@
-# Ensemble des Codes Utilisés
+# Set of Codes Used
 
-## Structure des Dossiers
+## Folder Structure
 
-- **SSD et RA** : Ce dossier contient les codes utilisés pour les simulations liées aux analyses SSD et RA.
-- **SSS** : Ce dossier regroupe les codes nécessaires aux simulations SSS.
-- **SFS** : Ce dossier contient les codes et simulations pour la partie SFS.
+- **SSD and RA**: This folder contains the codes used for simulations related to SSD and RA analyses.
+- **SSS**: This folder groups the codes necessary for SSS simulations.
+- **SFS**: This folder contains the codes and simulations for the SFS part.
 
-## Détails des Simulations
+## Simulation Details
 
-### SSD et SSS
-Les simulations pour SSD et SSS ont été développées en Python et sont exécutables via Jupyter Notebook. Bien que certaines simulations puissent prendre un peu de temps, elles s'exécutent sans problème sur une machine locale.
+### SSD and SSS
+The simulations for SSD and SSS were developed in Python and are executable via Jupyter Notebook. Although some simulations may take some time to run, they can be executed smoothly on a local machine.
 
 ### SFS
-Les simulations pour SFS nécessitent un grand nombre de calculs intensifs, ce qui a rendu indispensable l'utilisation des ressources de calcul à distance d'Imperial College. Vous trouverez dans ce dossier :
-- Des scripts en C et en Python utilisés pour les simulations.
-- Les scripts PBS nécessaires pour soumettre les tâches au serveur HPC d'Imperial College.
+The simulations for SFS require extensive computational power, which necessitated the use of remote computing resources at Imperial College. In this folder, you will find:
+- C and Python scripts used for the simulations.
+- PBS scripts needed to submit jobs to the Imperial College HPC server.
